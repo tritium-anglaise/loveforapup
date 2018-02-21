@@ -1,0 +1,27 @@
+body {
+  background: white;
+  font-family: PT Serif, sans-serif;
+  padding: 2.5%;
+}
+
+h1 {
+  text-align: right;
+}
+
+#root > div {
+  display: flex;
+  position: absolute;
+  height: 97%;
+  width: 97%;
+}
+
+@media(max-width: $mobileBreakpoint) {
+  body {
+	padding: 0;
+  }
+
+  #root > div {
+	height: 100%;
+	width: 100%;
+  }
+}

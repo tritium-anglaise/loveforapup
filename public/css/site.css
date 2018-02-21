@@ -1,0 +1,60 @@
+body, div, h1, h2, h3, h4, li, ul {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+li {
+  list-style-type: none; }
+
+body {
+  background: white;
+  font-family: PT Serif, sans-serif;
+  padding: 2.5%; }
+
+h1 {
+  text-align: right; }
+
+#root > div {
+  display: flex;
+  position: absolute;
+  height: 97%;
+  width: 97%; }
+
+@media (max-width: 650px) {
+  body {
+    padding: 0; }
+
+  #root > div {
+    height: 100%;
+    width: 100%; } }
+#breedList {
+  flex-basis: 20%;
+  overflow-y: scroll; }
+  #breedList li {
+    cursor: pointer;
+    text-transform: capitalize; }
+    #breedList li.selected {
+      text-decoration: underline;
+      font-style: italic; }
+    #breedList li:hover {
+      text-decoration: underline; }
+
+@media (max-width: 650px) {
+  #breedList {
+    flex-basis: 30%; } }
+#breedView {
+  flex-basis: 80%;
+  text-align: center; }
+  #breedView h3 {
+    text-align: center;
+    text-transform: capitalize; }
+    #breedView h3.no-breed {
+      margin-top: 33%; }
+  #breedView img {
+    display: block;
+    margin: 0 auto; }
+
+@media (max-width: 650px) {
+  #breedView {
+    padding: 5%;
+    flex-basis: 70%; } }

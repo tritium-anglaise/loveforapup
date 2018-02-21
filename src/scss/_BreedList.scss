@@ -1,0 +1,24 @@
+#breedList {
+  flex-basis: 20%;
+  overflow-y: scroll;
+
+  li {
+	cursor: pointer;
+	text-transform: capitalize;
+
+	&.selected {
+	  text-decoration: underline;
+	  font-style: italic;
+	}
+
+	&:hover {
+	  text-decoration: underline;
+	}
+  }
+}
+
+@media(max-width: $mobileBreakpoint) {
+  #breedList {
+	flex-basis: 30%;
+  }
+}

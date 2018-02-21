@@ -1,0 +1,25 @@
+#breedView {
+  flex-basis: 80%;
+  text-align: center;
+  
+  h3 {
+	text-align: center;
+	text-transform: capitalize;
+
+	&.no-breed {
+	  margin-top: 33%;
+	}
+  }
+
+  img {
+	display: block;
+	margin: 0 auto;
+  }
+}
+
+@media(max-width: $mobileBreakpoint) {
+  #breedView {
+	padding: 5%;
+	flex-basis: 70%;
+  }
+}
