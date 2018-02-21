@@ -40,6 +40,11 @@ class BreedView extends React.Component {
 		// pup pic and request a new one immediately after the src of the
 		// last was set.
 		if(this.props.currentBreed !== prevProps.currentBreed ){
+			// clear the picture when switching between breeds
+			this.setState({
+				breedPic: null
+			});
+
 			this.fetchAndUpdatePic();
 		}
 	}
