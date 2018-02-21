@@ -1,6 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+// fetch api polyfill for slightly older browsers
+import 'whatwg-fetch';
+
 import {fetchBreedPic} from '../util/fetch-handler';
 
 class BreedView extends React.Component {
@@ -22,8 +25,14 @@ class BreedView extends React.Component {
 		fetchBreedPic(this.props.currentBreed).then((response) => {
 			this.setState({
 				breedPic: response.message
-			})
+			});
 		});
+	};
+
+	clearLoadingFlag = () => {
+		this.setState({
+			loading: false
+		})
 	};
 
 	componentDidUpdate(prevProps) {
@@ -46,9 +55,9 @@ class BreedView extends React.Component {
 				<div id="breedView">
 					<h3>{this.props.currentBreed}</h3>
 
-					<img src={this.state.breedPic} alt=""/>
+					<img onLoad={this.clearLoadingFlag} src={this.state.breedPic} alt=""/>
 
-					<button onClick={this.fetchAndUpdatePic}>Let's See Another!</button>
+					<button onClick={this.fetchAndUpdatePic} disabled={this.state.loading}>Let's See Another!</button>
 				</div>
 			);
 		} else {
